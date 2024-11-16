@@ -33,7 +33,7 @@
 #### 1.You need to place the Prefab (WangQAQUdonLib) in the directory into the scene
 
 #### 2.You can use this code like this
-> public HC256 _hc256;					      // You Neeed Bind this to HC256(in WangQAQUdonLib/Encrypt & decrypt) or use AutoBind(in HC256TEST have this) <br>
+> public HC256 _hc256;					      // You Neeed Bind this to HC256(in prefab have) or use AutoBind(in HC256TEST have this) <br>
 > <br>
 > string Key = "xxxxx";					      // Key <br>
 > string InText = "xxxxx";				    // Text <br>

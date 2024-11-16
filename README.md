@@ -45,7 +45,7 @@
 > // Decrypt <br>
 > var done = _hc256.Process(t, Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv); <br>
 #### You can Lean More in HC256TEST.cs there have a simple Example
-
+---
 ### How can I use *TEST.cs demo
 #### Just create a empty object and bind script , final use Client Sim call func and read the variables
 #### IF test HC256 you need set the InText and Key

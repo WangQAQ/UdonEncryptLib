@@ -24,7 +24,7 @@
    </tr>
    <tr>
       <td>BLAKE2bHMAC</td>
-      <td>☑ (Non-standard) (Can use in `python hashlib and hmac` or use `this code in server`)</td>
+      <td>☑ (Non-standard) (Can use in python hashlib and hmac or use this code in server)</td>
    </tr>
 </table>
 

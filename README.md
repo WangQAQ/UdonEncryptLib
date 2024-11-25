@@ -30,7 +30,7 @@
 #### You can see those in UdonRngTest.cs	
 ### Encrypt & decrypt
 
-#### 1.You need to place the Prefab (WangQAQUdonLib) in the directory into the scene
+#### 1.You need to place the Prefab (WangQAQUdonLib) into the scene
 
 #### 2.You can use this code like this
 > public HC256 _hc256;					      // You Neeed Bind this to HC256(in prefab have) or use AutoBind(in HC256TEST have this) <br>

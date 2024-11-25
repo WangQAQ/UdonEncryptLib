@@ -26,29 +26,26 @@ namespace WangQAQ.ED
 
 		public string Done = "";
 
-		public void Start()
+		void Start()
 		{
-			if(_hc256 == null)
-				_hc256 = GameObject.Find("HC256").GetComponent<HC256>();
+			_hc256 = GameObject.Find("HC256").GetComponent<HC256>();
 		}
 
-		public void Encrypt()
+		public void _Test()
 		{
-			byte[] iv = UdonRng.GetRngSha256();
-			IVb64 = Convert.ToBase64String(iv);
+			byte[] iv32 = UdonRng.GetRngBLAKE2b256();	// 假设已有 32 字节的数组
+			IVb64 = Convert.ToBase64String(iv32);
 
-			// Encrypt
-			var t = _hc256.Process(Encoding.UTF8.GetBytes(InText), Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv);
+			var t = _hc256.Process(Encoding.UTF8.GetBytes(InText), BLAKE2b.BLAKE2b_256(Encoding.UTF8.GetBytes(Key)), iv32);
 			Outb64 = Convert.ToBase64String(t);
 		}
 
-		public void Decrypt()
+		public void _test2()
 		{
 			var iv = Convert.FromBase64String(IVb64);
+			var t = Convert.FromBase64String(Outb64);
 
-			//decrypt
-			var t = _hc256.Process(Convert.FromBase64String(Outb64), Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv);
-			Done = Encoding.UTF8.GetString(t);
+			Done = Encoding.UTF8.GetString(_hc256.Process(t, BLAKE2b.BLAKE2b_256(Encoding.UTF8.GetBytes(Key)), iv));
 		}
 
 	}

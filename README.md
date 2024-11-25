@@ -14,7 +14,7 @@
       <td>✔</td>
    </tr>
   	<tr>
-      <td>HhaCha20</td>
+      <td>ChaCha20</td>
       <td>✔</td>
    </tr>
    <tr>

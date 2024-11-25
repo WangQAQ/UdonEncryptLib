@@ -16,22 +16,14 @@ namespace WangQAQ.ED
 	// 若作为加密用随机数，建议使用前先预热（玩家进入5-10秒后再调用）
 	public class UdonRng : UdonSharpBehaviour
 	{
-		public static string GetRngSha256S()
+		public static byte[] GetRngBLAKE2b128()
 		{
-			return UdonHashLib.SHA256_Bytes(longToBytes(GetRng()));
+			return BLAKE2b.BLAKE2b_128(longToBytes(GetRng()));
 		}
 
-		public static byte[] GetRngSha256()
+		public static byte[] GetRngBLAKE2b256()
 		{
-			string rngSha = UdonHashLib.SHA256_Bytes(longToBytes(GetRng()));
-			byte[] sha256Bytes = new byte[rngSha.Length / 2];
-
-			for (int i = 0; i < sha256Bytes.Length; i++)
-			{
-				sha256Bytes[i] = Convert.ToByte(rngSha.Substring(i * 2, 2), 16);
-			}
-
-			return sha256Bytes;
+			return BLAKE2b.BLAKE2b_256(longToBytes(GetRng()));
 		}
 
 		public static long GetRng()

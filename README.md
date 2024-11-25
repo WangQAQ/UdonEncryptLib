@@ -1,7 +1,6 @@
 # Udon Encrypt & decrypt Lib
 ### Catalog 
 * #### 1.How can I use & What it can do
-* #### 2.Plugin Dependencies
 ---
 ## 1.1.What it can do
 #### It has these encryptions
@@ -32,10 +31,9 @@
 ---
 ## 1.2.How can I use
 ### RNG (this is Static Lib)
-> string rng = UdonRng.GetRngSha256S();	// String Rng (Sha256) <br>
-> byte[] rng = UdonRng.GetRngSha256();	// Byte[] Rng <br>
-> long 	 rng = UdonRng.GetRng();		    // Long Rng <br>
-#### You can see those in UdonRngTest.cs	
+> byte[] rng = UdonRng.GetRngBLAKE2b128();	// Byte[] Rng <br>
+> byte[] rng = UdonRng.GetRngBLAKE2b256();	// Byte[] Rng <br>
+> long 	 rng = UdonRng.GetRng();		// Long Rng
 ### Encrypt & decrypt
 
 #### 1.You need to place the Prefab (WangQAQUdonLib) into the scene
@@ -60,17 +58,3 @@
 #### Just create a empty object and bind script , final use Client Sim call func and read the variables
 #### IF test HC256 you need set the InText and Key
 ![12](https://github.com/user-attachments/assets/ba0f5388-2491-48d6-bb13-7b132e2dc34e)
-
-## 2.Plugin Dependencies
-#### in this project have a static UdonHashLib version. you don't need to add extra
-
-<table>
-   <tr>
-      <td>name</td>
-      <td>link</td>
-   </tr>
-	<tr>
-      <td>UdonHashLib</td>
-      <td>https://github.com/scarletcafe/vrchat-udon-hashlib</td>
-   </tr>
-</table>

@@ -24,7 +24,7 @@ namespace WangQAQ.ED
 			_cc20 = GameObject.Find("CC20").GetComponent<CC20>();
 		}
 
-		public void _Test()
+		public void Encrypt()
 		{
 			byte[] iv32 = UdonRng.GetRngBLAKE2b128();   // 假设已有 32 字节的数组
 			byte[] iv12 = new byte[12];					// 假设已有 32 字节的数组
@@ -39,7 +39,7 @@ namespace WangQAQ.ED
 			Outb64 = Convert.ToBase64String(t);
 		}
 
-		public void _test2()
+		public void Decrypt()
 		{
 			var iv = Convert.FromBase64String(IVb64);
 			var t = Convert.FromBase64String(Outb64);

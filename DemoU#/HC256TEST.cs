@@ -31,7 +31,7 @@ namespace WangQAQ.ED
 			_hc256 = GameObject.Find("HC256").GetComponent<HC256>();
 		}
 
-		public void _Test()
+		public void Encrypt()
 		{
 			byte[] iv32 = UdonRng.GetRngBLAKE2b256();	// 假设已有 32 字节的数组
 			IVb64 = Convert.ToBase64String(iv32);
@@ -40,7 +40,7 @@ namespace WangQAQ.ED
 			Outb64 = Convert.ToBase64String(t);
 		}
 
-		public void _test2()
+		public void Decrypt()
 		{
 			var iv = Convert.FromBase64String(IVb64);
 			var t = Convert.FromBase64String(Outb64);

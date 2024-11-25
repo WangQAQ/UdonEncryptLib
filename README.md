@@ -15,8 +15,16 @@
       <td>✔</td>
    </tr>
   	<tr>
-      <td>ChaCha20</td>
-      <td>✘ (Next version supports)</td>
+      <td>HhaCha20</td>
+      <td>✔</td>
+   </tr>
+   <tr>
+      <td>BLAKE2b</td>
+      <td>✔</td>
+   </tr>
+   <tr>
+      <td>BLAKE2bHMAC</td>
+      <td>☑ (Non-standard) (Can use in `python hashlib and hmac` or use `this code in server`)</td>
    </tr>
 </table>
 
@@ -33,18 +41,20 @@
 #### 1.You need to place the Prefab (WangQAQUdonLib) into the scene
 
 #### 2.You can use this code like this
-> public HC256 _hc256;					      // You Neeed Bind this to HC256(in prefab have) or use AutoBind(in HC256TEST have this) <br>
-> <br>
-> string Key = "xxxxx";					      // Key <br>
-> string InText = "xxxxx";				    // Text <br>
-> byte[] iv = UdonRng.GetRngSha256();	// Get IV <br>
-> <br>
-> // Encrypt <br>
-> var t = _hc256.Process(Encoding.UTF8.GetBytes(InText), Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv); <br>
-> <br>
-> // Decrypt <br>
-> var done = _hc256.Process(t, Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv); <br>
-#### You can Lean More in HC256TEST.cs there have a simple Example
+> public HC256 _hc256;					// You Neeed Bind this to HC256(in WangQAQUdonLib/Encrypt & decrypt) or use AutoBind(in HC256TEST have this)
+> 
+> string Key = "xxxxx";					// Key
+> string InText = "xxxxx";				// Text 
+> byte[] iv = UdonRng.GetRngSha256();	// Get IV
+> 
+> // Encrypt
+> var t = _hc256.Process(Encoding.UTF8.GetBytes(InText), Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv);
+> 
+> // Decrypt
+> var done = _hc256.Process(t, Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv);
+> 
+> // chacah20 is like this too
+#### You can look DemoU# or look TestWorld there have the simple example
 ---
 ### How can I use *TEST.cs demo
 #### Just create a empty object and bind script , final use Client Sim call func and read the variables

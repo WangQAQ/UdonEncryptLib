@@ -41,17 +41,17 @@
 #### 2.You can use this code like this
 > public HC256 _hc256;					// You Neeed Bind this to HC256(in WangQAQUdonLib/Encrypt & decrypt) or use AutoBind(in HC256TEST have this)
 > 
-> string Key = "xxxxx";					// Key
-> string InText = "xxxxx";				// Text 
-> byte[] iv = UdonRng.GetRngSha256();	// Get IV
+> string Key = "xxxxx";					// Key <br>
+> string InText = "xxxxx";				// Text <br>
+> byte[] iv = UdonRng.GetRngSha256();	// Get IV <br>
 > 
-> // Encrypt
-> var t = _hc256.Process(Encoding.UTF8.GetBytes(InText), Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv);
+> // Encrypt <br>
+> var t = _hc256.Process(Encoding.UTF8.GetBytes(InText), Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv); <br>
 > 
-> // Decrypt
-> var done = _hc256.Process(t, Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv);
+> // Decrypt <br>
+> var done = _hc256.Process(t, Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv); <br>
 > 
-> // chacah20 is like this too
+> // chacah20 is like this too <br>
 #### You can look DemoU# or look TestWorld there have the simple example
 ---
 ### How can I use *TEST.cs demo

@@ -43,7 +43,7 @@
 > 
 > string Key = "xxxxx";					// Key <br>
 > string InText = "xxxxx";				// Text <br>
-> byte[] iv = UdonRng.GetRngSha256();	// Get IV <br>
+> byte[] iv = UdonRng.GetRngBLAKE2b256();		// Get IV <br>
 > 
 > // Encrypt <br>
 > var t = _hc256.Process(Encoding.UTF8.GetBytes(InText), Encoding.UTF8.GetBytes(UdonHashLib.SHA256_UTF8(Key)), iv); <br>
